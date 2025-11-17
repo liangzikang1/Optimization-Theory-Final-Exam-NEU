@@ -1,0 +1,150 @@
+\begin{examset}[2016-2017]
+    \begin{problem}
+        用两阶段单纯形法解线性规划
+
+\[
+\begin{array}{ll}
+\min & z = -4x_1 - x_2 \\
+& \\
+\text{s.t.} & 
+\left\{
+\begin{array}{l}
+x_1 + 2x_2 \leq 4 \\
+-4x_1 - 3x_2 \leq -6 \\
+3x_2 + x_3 \geq 3 \\
+x_1, x_2 \geq 0
+\end{array}
+\right.
+\end{array}
+\]
+    \end{problem}
+
+    \begin{problem}
+        1. 简述迭代格式 $x_{k+1} = \overline{x}_k + t_k \overline{p}_k$ ($k=0,1,\ldots$) 对于 $x$ 受许方向法与最速下降法的区别，以及 $t_k$ 取了什么值才能保证 $\overline{x}_k$ 是下一次迭代的允许点。
+
+        \textbf{2.} 试图表示的克极小化问题 $\min f(x)$，$R$ 表示容许域。(1) 在图中画出点 $\overline{x}_1$，$\overline{x}_2$ 的所有起作用的束函数的梯度方向；(2) $\overline{x}_1$，$\overline{x}_2$ 是否 $K-T$ 点？
+        \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\linewidth]{fig/2016-1}
+    \end{figure}
+
+    \end{problem}
+        
+    \begin{problem}
+        \textbf{(1)} 用图解法求解下面问题；\textbf{(2)} 将它化为标准线性规划问题。
+
+\[
+\begin{array}{ll}
+\max z = x_1 + 2x_2 \\
+& \\
+\text{s.t.}
+\begin{cases}
+2x_1 + 3x_2 \leq 6 \\
+x_1 + x_2 \geq 1 \\
+x_2 \geq 0
+\end{cases}
+\end{array}
+\]
+    \end{problem}
+
+    \begin{problem}
+        用 Newton 法求解极小化问题
+
+\[
+\min x_1^2 x_2 + 2x_2 x_3^4 - 4x_1 x_2,
+\]
+
+初始点取为 $x_0 = [1, 1]^T$，迭代一次得到迭代点 $\overline{x}_1$，并说明 $\overline{x}_1$ 是局部最优解吗？
+    \end{problem}
+
+    \begin{problem}
+        设初始点为 $\overline{x}_0 = [2, -1]^T$。用 F-R 共轭梯度法求解无约束极小化问题
+
+\[
+\min x_1^2 + 2x_1 x_2 + 2x_2^2.
+\]
+    \end{problem}
+
+    \begin{problem}
+        试用 DFP 法求解无约束优化问题
+
+\[
+\min x_1^3 + 2x_2^3 - 2x_1 x_2 + x_2^5,
+\]
+
+初始点取为 $\overline{x}_0 = [1, 1]^T$。已知：一次迭代 $p_0 = -\nabla f(\overline{x}_0)$ 方向迭代得到迭代点 $\overline{x}_1 = \begin{bmatrix} \frac{1}{3} & \frac{1}{3} \end{bmatrix}^T$ 否是最优解。求第二个迭代点 $\overline{x}_2$，并判断 $\overline{x}_2$ 是否局部最优解。
+
+(校正公式：$H_0 = I$ 单位矩阵，$H_{k+1} = H_k + \frac{s_k s_k^T}{s_k^T y_k} - \frac{H_k y_k y_k^T H_k}{y_k^T H_k y_k}$)
+    \end{problem}
+
+    \begin{problem}
+        用步长加速法求解无约束极小化问题
+
+\[
+\min (x_1 - 1)^4 + 2x_2^2
+\]
+
+初始点取为 $\overline{x}_0 = [4, 3]^T$，初始步长向量 $\overline{s}_0 = [1, 1]^T$，迭代到开始缩小步长为止
+    \end{problem}
+
+    \begin{problem}
+        1. 利用最优性条件，求解约束问题
+
+\[
+\begin{array}{ll}
+\min & -x_1 + x_2 \\
+\text{s.t.} & x_1 + x_2 \leq 1, \\
+& x_1 + x_2 = 1.
+\end{array}
+\]
+    \end{problem}
+
+    \begin{problem}
+        下表给出了某厂节能煤耗技术改造后生产甲产品过程中记录的产量 $x$（吨）与相应的生产能耗 $y$（吨标准煤）的几组对照数据
+
+\[
+\begin{array}{c|cccc}
+x & 3 & 4 & 5 & 6 \\
+\hline
+y & 2.5 & 3 & 4 & 4.5
+\end{array}
+\]
+
+(1) 请根据上表提供的数据，用最小二乘法求出 $y$ 与 $x$ 的线性回归方程；  
+
+(2) 已知该厂技改前 100 吨甲产品的生产能耗为 90 吨标准煤，试根据 (1) 求出的线性回归方程，预测生产 100 吨甲产品的生产能耗比技改前降低多少吨标准煤。
+    \end{problem}
+
+
+    \begin{problem}
+        求解约束问题
+
+\[
+\begin{array}{ll}
+\min & 2x_1^2 + x_2 x_3 + 2x_2^2 \\
+\text{s.t.} & 2x_1 + 7x_2 \leq 10, \\
+& x_1 - 3x_2 \leq 4, \\
+& x_1 + 2x_2 \geq 4, \\
+& x_i \geq 0.
+\end{array}
+\]
+
+(1) 设初始点取为 $\overline{x}_0 = [4, 0]^T$，试用 $z$ 容许方向法迭代一次，求出下一迭代点 $\overline{x}_1$；  
+
+(2) $z$ 容许方向法的迭代终止准则是什么？  
+
+(3) 并预测 $\overline{x}_0$ 和 $\overline{x}_1$ 是否满足终止准则。
+    \end{problem}
+
+    \begin{problem}
+        用外部罚函数法求解约束问题
+
+\[
+\begin{array}{ll}
+\min & f(x) = (x_1 - 2)^2 + (x_2 - 1)^2 \\
+\text{s.t.} & x_1 + 2x_2 \geq 7 \\
+& 2x_1 - x_2 \geq 4
+\end{array}
+\]
+    \end{problem}
+\end{examset}

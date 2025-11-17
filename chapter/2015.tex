@@ -1,0 +1,154 @@
+\begin{examset}[2015-2016]
+    \begin{problem}
+        用两阶段单纯形法解下面的线性规划
+
+\[
+\begin{aligned}
+\min \quad & -5x_1 + x_2 + 2x_3; \\
+\text{s.t.} \quad & 3x_1 - x_2 + 2x_3 \leq 3, \\
+& -x_1 + 2x_2 + 3x_3 \geq 4, \\
+& x_1 + x_2 + x_3 = 2, \\
+& -x_1 + x_2 + x_3 \leq 1, \\
+& x_1, x_2, x_3 \geq 0.
+\end{aligned}
+\]
+    \end{problem}
+
+    \begin{problem}
+        (1) 图(a), (b)显示的是两个最小化线性规划的容许集、初始点和目标函数的梯度方向，试画出单纯形法的迭代路径（并说明每种情况），图(c)是一个极小化问题的等值线图；  
+试判断点 $\bar{x}_0$ 方向，画出最速下降法的前 3 次迭代路径。
+        \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2015-1}
+    \end{figure}
+    \end{problem}
+
+    \begin{problem}
+        利用最小二乘法解线性方程组
+
+\[
+\begin{cases}
+x_1 + x_2 + x_3 = 4, \\
+2x_1 - 3x_2 - x_3 = -2, \\
+-x_1 + 2x_2 - 2x_3 = -4, \\
+-x_1 + x_3 = 1.
+\end{cases}
+\]
+    \end{problem}
+
+    \begin{problem}
+        利用极小点的判定条件求下面优化问题的极小点.
+\[
+\min x_1^3 + 3x_1 x_2^2 - 15x_1 - 12x_2
+\]
+    \end{problem}
+
+    \begin{problem}
+        用 DFP 法求解优化问题
+
+\[
+\min x_1^2 + 2x_2^2 + 2x_1 x_2 - x_1 + x_2 .
+\]
+
+初始点为 $\bar{x}_0 = [0, 0]^T$.
+
+公式：
+\[
+\bar{H}_{k+1} = \bar{H}_k + \frac{\bar{s}_k \bar{s}_k^T}{\bar{s}_k^T \bar{y}_k} - \frac{\bar{H}_k \bar{y}_k \bar{y}_k^T \bar{H}_k}{\bar{y}_k^T \bar{H}_k \bar{y}_k}, \quad
+\bar{H}_0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} .
+\]
+    \end{problem}
+
+    \begin{problem}
+        采用图上作业，用步长加速法求解无约束问题 $\min f(\bar{x})$．下图是 $f(\bar{x})$ 的等值线图，标号 1 处为初始点，设初始步长向量的分量均为 1（图中网格为单位格），迭代到开始缩小步长为止．要求：
+
+(a) 在下方所示直角坐标系上标出探测方向的顺序；
+
+(b) 按下面指定的标识方式，标出作业过程中的全部基点、参考点和探测经历点，对基点按进行的先后依次标号 1, 2, \dots
+
+\begin{itemize}[label=]
+\item $\square$ 参考点 \quad $\bullet$ 基点 \quad $\circ$ 探测经历点 \quad $\blacksquare$ 基点与参考点重合的点
+\end{itemize}
+
+(c) 以“$\rightarrow$”标出模式移动。
+
+    \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2015-2}
+    \end{figure}
+    \end{problem}
+
+    \begin{problem}
+        (1) 用 Z-容许方向法求解约束问题
+
+\[
+\begin{aligned}
+\min \quad & x_1^2 + 4x_2^2 - x_2; \\
+\text{s.t.} \quad & 2x_1 + 3x_2 \leq 5, \\
+& x_1 + x_2 = 2, \\
+& x_1 \geq 0, x_2 \geq 0.
+\end{aligned}
+\]
+
+设初始点为 $\bar{x}_0 = [1,1]^T$，迭代一次求 $\bar{x}_1$.
+    \end{problem}
+
+    \begin{problem}
+        考虑问题
+
+\[
+\min x_1^3 + 3x_1 x_2^2 - 15x_1 - 12x_2 .
+\]
+
+设初始点为 $\bar{x}_0 = (2,3)^T$．用 Newton 法迭代一次．
+    \end{problem}
+
+    \begin{problem}
+        用 F-R 共轭梯度法求解优化问题
+
+\[
+\min 2(x_1 - x_2)^2 + (x_2 - 1)^2 .
+\]
+
+设初始点为 $\bar{x}_0 = [0,0]^T$，迭代二次求出 $\bar{x}_2$（提示：最优步长因子 $t_0$ 是 2 的负整数次幂）.
+    \end{problem}
+
+    \begin{problem}
+        设 $\bar{x} \in \mathbb{R}^n, \bar{c} \neq \bar{0}$，考虑问题
+
+\[
+\begin{array}{ll}
+\min & \bar{c}^T \bar{x}, \\
+\text{s.t.} & \bar{x}^T \bar{x} \geq 70 \text{ s.t. } \bar{x}^T \bar{x} \leq 1.
+\end{array}
+\]
+
+求该问题的 K-T 点，并判断其是否为全局极小点。
+    \end{problem}
+
+    \begin{problem}
+        用外部罚函数法求解约束问题
+
+\[
+\begin{aligned}
+\min \quad & -\ln(x_1 + 1) - \ln(x_2 + 1); \\
+\text{s.t.} \quad & x_1 + x_2 \leq 2, \\
+& x_i \geq 0.
+\end{aligned}
+\]
+    \end{problem}
+
+    \begin{problem}
+        考虑问题.
+
+\[
+\begin{aligned}
+\min \quad & x_1; \\
+\text{s.t.} \quad & 16 - (x_1 - 4)^3 - x_2^2 \geq 0, \\
+& (x_1 - 3)^2 + (x_2 - 2)^3 - 13 \geq 0.
+\end{aligned}
+\]
+
+问：$\bar{x}_1 = (0,0)$ 与 $\bar{x}_2 = (3,2-\sqrt{3})$ 是 K-T 点吗？为什么？如果是 K-T 点，则是否为全局极小点？
+    \end{problem}
+\end{examset}

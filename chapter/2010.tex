@@ -1,0 +1,108 @@
+\begin{examset}[2010-2011]
+    \begin{problem}
+        \text{用两阶段单纯形法解如下线性规划}
+$$ \min 3x_1 - x_2 $$
+\text{s.t.}
+\begin{align*}
+x_1 + x_2 + x_3 &\leq 6 \\
+-2x_1 + x_2 - x_3 &\geq 1 \\
+3x_2 + x_3 &= 9 \\
+x_i &\geq 0, i=1, 2, 3
+\end{align*}
+\text{并回答: 该线性规划目标函数的等值——是————}
+    \end{problem}
+
+    \begin{problem}
+        \text{用 Newton 法解无约束问题}
+$$ \min f(x_1, x_2) = (x_1 - 1)^4 + (x_1^2 - x_2)^2 $$
+\text{初始点取为 } $\bar{x}_0 = [1, 2]^T$ \text{, 迭代一次求 } $\bar{x}_1$ \text{, 并说明 } $\bar{x}_1$ \text{ 是否为最优解.}
+    \end{problem}
+
+    \begin{problem}
+        \text{三、(15 分) 用 F-R 共轭梯度法解无约束问题}
+$$ \min f(\bar{x}) = 3x_1^2 + 2x_1x_2 + x_2^2 - 6x_1 + 2x_2 $$
+\text{初始点取为 } $\bar{x}_0 = [1, 0]^T$ \text{.}
+\newline
+\text{回答: F-R 共轭梯度法是一种共轭方向方法, 具有————}\text{ 步终止性. 本题的目标函数为————}, 使用共轭梯度法至多迭代———— \text{ 次即可求到最优解. 本题的目标函数的等值——是—————}
+    \end{problem}
+
+    \begin{problem}
+        \text{用步长加速法求解无约束极小化问题}
+$$ \min f(x_1, x_2) = 4x_1^2 + x_2^2 - x_1x_2 $$
+\text{初始点取为 } $\bar{x}_0 = [-1, 1]^T$ \text{. 初始步长向量 } $\bar{s}_0 = [1, 1]^T$ \text{. 迭代到开始缩小步长为止.}
+\newline
+\text{根据计算过程回答: 步长加速法主要包括 加速 和 修正 两个基本过程. 如果有 } $f(\bar{b}_1) < f(\bar{b}_0)$ \text{, 则说明 } $\bar{b}_1 - \bar{b}_0$ \text{ 是 } $\bar{b}_0$ \text{ 处的 下降方向.}
+    \end{problem}
+    
+    \begin{problem}
+        已测得变量 $t$ 与 $y$ 的 5 组数据如下：
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $t$ & 0 & 1 & 2 & 3 & 4 \\
+    \hline
+    $y$ & 1 & 3 & 5 & 4 & 2 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item 根椐这 5 组数据，试说说用一次函数，还是二次函数作 $t$ 与 $y$ 之间的拟合更好？
+    \item 用在 (1) 中你所选择的拟合函数，建立 $t$ 与 $y$ 之间的最小二乘模型。（注：不求值）
+\end{enumerate}
+    \end{problem}
+
+    \begin{problem}
+        对于方程组
+\[
+\left\{
+\begin{aligned}
+t_1 + x_2 &= 4, \\
+-t_1 + 2x_2 &= -1, \\
+3t_1 - x_2 &= 1,
+\end{aligned}
+\right.
+\]
+求其最小二乘解，并给出结果判断该方程组是否含有解。
+    \end{problem}
+
+    \begin{problem}
+        求如下约束问题
+
+\begin{align*}
+    \min_{x_1, x_2} \quad & f(x_1, x_2) = \ln x_1 - x_2 \\
+    \text{s.t.} \quad & x_1 - x_2^2 \ge 1 \\
+\end{align*}
+
+的 K-T 点，并利用凸规划的 K-T 点定理，判断求到的 K-T 点是否为问题的最优解。
+    \end{problem}
+
+    \begin{problem}
+        用 Zoutendijk 容许方向法解如下约束问题
+\begin{align*}
+    \min_{x_1, x_2} \quad & x_1^2 + 2x_2^2 - x_1 x_2 \\
+    \text{s.t.} \quad & x_1 + x_2 = 2, \\
+    \quad & x_1 + 4x_2 \le 5, \\
+    \quad & x_1, x_2 \ge 0.
+\end{align*}
+初始点取为 $\bar{\mathbf{x}} = [1, 1]^T$，迭代一步求出 $\bar{\mathbf{x}}_1$。
+    \end{problem}
+
+    \begin{problem}
+        用乘子法解如下约束问题
+\begin{align*}
+    \min_{x_1, x_2} \quad & f(x_1, x_2) = (x_1 - x_2)^2 - 5x_1 - x_2 \\
+    \text{s.t.} \quad & x_1 + x_2 \le 2, \\
+    \quad & x_1, x_2 \ge 0. \quad (\text{隐含约束})
+\end{align*}
+并回答：乘子法中的罚因子与外部罚函数法中的罚因子的本质区别。
+
+
+\textbf{公式:} $F(\bar{\mathbf{x}}, \bar{\boldsymbol{\lambda}}, \bar{\boldsymbol{\nu}}, \mu) = f(\bar{\mathbf{x}}) - \sum_{j=1}^{l} \lambda_j h_j(\bar{\mathbf{x}}) + \mu \sum_{j=1}^{l} h_j^2(\bar{\mathbf{x}}) + \frac{1}{4\mu} \sum_{i=1}^{m} \{[\max(0, \bar{\nu}_i - 2\mu g_i(\bar{\mathbf{x}}))]^2 - \bar{\nu}_i^2\}$.
+
+\begin{align*}
+    \lambda_j^{(t+1)} &= \lambda_j^{(t)} - 2\mu h_j(\bar{\mathbf{x}}_t), \quad j=1, 2, \dots, l; \\
+    \nu_i^{(t+1)} &= \max(0, \nu_i^{(t)} - 2\mu g_i(\bar{\mathbf{x}}_t)), \quad i=1, 2, \dots, m.
+\end{align*}
+    \end{problem}
+\end{examset}

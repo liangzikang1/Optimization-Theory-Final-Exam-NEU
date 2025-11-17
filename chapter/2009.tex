@@ -1,0 +1,78 @@
+\begin{examset}[2009-2010]
+  \begin{problem}
+  试用两阶段单纯形法求解线性规划问题:
+\[
+\begin{array}{ll}
+\min & Z = -2x_1 + 2x_3 \\
+\text{s.t.} & x_1 - 2x_2 + x_3 \leq 2 \\
+& -2x_1 + x_2 + x_3 \geq 3 \\
+& 2x_1 - x_3 = 1 \\
+& x_1, x_2, x_3 \geq 0
+\end{array}
+\]
+  \end{problem}
+
+  \begin{problem}
+  用 Newton 法求解极小化问题:
+$$ \min f(x_1, x_2) = 3x_1^3 + x_2^3 - x_1^2x_2 $$
+\text{初始点取为 } $\bar{x}_0 = [1, 1]^T$ \text{, 迭代一次, 并说明 } $\bar{x}_1$ \text{ 是否是局部最优解吗?}
+  \end{problem}
+
+  \begin{problem}
+    \text{用 F-R 共轭梯度法求解无约束优化问题:}
+$$ \min f(x_1, x_2) = e^{x_1^2 + x_1x_2 + 2x_2^2} $$
+\text{初始点取为 } $\bar{x}_0 = [2, -1]^T$ \text{, 已知第一次沿 } $\bar{p}_0 = -\nabla f(\bar{x}_0)$ \text{ 方向迭代得到的迭代点 } $\bar{x}_1 = [1, -1]^T$ \text{ 不是最优解. 求第二个迭代点 } ($\bar{x}_2$) \text{.}
+  \end{problem}
+
+  \begin{problem}
+    \text{试用 DFP 法求解无约束优化问题}
+$$ \min f(\bar{x}) = x_1^2 + 2x_2^2 - 2x_1x_2 $$
+\text{初始点取为 } $\bar{x}_0 = [1, 1]^T$ \text{, 已知第一次沿 } $\bar{p}_0 = -\nabla f(\bar{x}_0)$ \text{ 方向迭代得到迭代点 } $\bar{x}_1 = [1, \pm 1]^T$ \text{.}
+$$ (\text{公式:} H_{k+1} = H_k + \frac{\bar{s}_k \bar{s}_k^T}{\bar{s}_k^T \bar{y}_k} - \frac{H_k \bar{y}_k \bar{y}_k^T H_k}{\bar{y}_k^T H_k \bar{y}_k} \text{, } H_0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}.) $$
+  \end{problem}
+
+  \begin{problem}
+    \text{考虑约束最优化问题}
+$$ \min f(x_1, x_2) = x_1^2 - 2x_1x_2 + 4x_2^2 $$
+\text{s.t.}\begin{align*}
+3x_1 + x_2 &\geq 2 \\
+2x_1 - 5x_2 &\geq -10 \\
+x_1 - 2x_2 &\leq 2 \\
+x_1, x_2 &\geq 0
+\end{align*}
+\text{初始点取为 } $\bar{x}_0 = [0, 2]^T$ \text{. 用 Zoutendijk 法求许可方向迭代一次.}
+  \end{problem}
+
+  \begin{problem}
+    \text{用外部罚函数法求解约束问题}
+$$ \min f(x_1, x_2) = (x_1 - x_2)^2 - 5x_1 - x_2 $$
+\text{s.t.}
+\begin{align*}
+2 - x_1 - x_2 &\geq 0 \\
+x_2 &\geq 0
+\end{align*}
+  \end{problem}
+
+  \begin{problem}
+    \text{用最小二乘法解方程组:}
+$$ \begin{cases} x_1 + x_2 = 1 \\ -2x_1 + x_2 = 0 \\ x_1 + 2x_2 = 4 \end{cases} $$
+  \end{problem}
+
+  \begin{problem}
+    \text{试判断向量 } $\bar{p} = [1, 0, 1]^T$ \text{ 是否是如下线性约束}
+\begin{align*}
+x_1 + 2x_2 - x_3 &= 6 \\
+-2x_1 + 5x_2 &\geq 4 \\
+x_1 + x_3 &\leq 2 \\
+x_i &\geq 0, i=1, 2, 3
+\end{align*}
+\text{在点 } $\bar{x} = [2, 2, 0]^T$ \text{ 处的容许方向向量.}
+  \end{problem}
+
+  \begin{problem}
+    \text{利用 K-T 条件求解约束问题}
+$$ \min f(x_1, x_2) = e^{-x_1} + e^{-x_2} $$
+\text{s.t.}
+$$ x_1 + x_2 \leq 1 $$
+  \end{problem}
+\end{examset}

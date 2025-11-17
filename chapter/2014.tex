@@ -1,0 +1,172 @@
+\begin{examset}[2014-2015]
+    \begin{problem}
+        用两阶段单纯形法解如下线性规划
+
+\[
+\begin{aligned}
+\min \quad & -3x_1 + x_2 + x_3; \\
+\text{s.t.} \quad & -4x_1 + x_2 + 2x_3 \geq 3, \\
+& x_1 + 2x_2 + x_3 \leq 11, \\
+& x_1 + x_3 = 1, \\
+& -2x_1 + x_3 = 1, \\
+& x_i \geq 0, \quad i=1,2,3.
+\end{aligned}
+\]
+    \end{problem}
+
+    \begin{problem}
+        用图解法求解非线性规划问题
+
+\[
+\begin{aligned}
+\min \quad & x_1^2 + x_2^2 - 2x_1 + 1; \\
+\text{s.t.} \quad & x_1 - x_2^2 \leq 1, \\
+& x_1 - x_2 \geq 2, \\
+& x_1, x_2 \geq 0.
+\end{aligned}
+\]
+    \end{problem}
+
+    \begin{problem}
+        已测得变量 $i$ 与 $y$ 的 5 组数据：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccccc}
+\toprule
+$i$   & $-1$ & $-0.7$ & $0$ & $0.7$ & $1$ \\
+$y$   & $-0.9$ & $-1$ & $-2$ & $-3.5$ & $-4.4$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+(1) 根据这 5 组数据，试从以下 4 个函数中选择最合适的一个函数拟合：
+
+\[
+y = x_1(i + x_2), \quad y = x_1 i^2 + x_2 i + x_3, \quad y = x_1 e^{x_2 i}, \quad y = \ln(x_1 + x_2 i)
+\]
+
+(2) 用你在 (1) 中选择的拟合函数，建立 $y$ 与 $i$ 之间的最小二乘模型。
+
+(3) 判断你在 (2) 中建立的是否是线性最小二乘模型．如果是，写出 $A, b$．
+    \end{problem}
+
+    \begin{problem}
+        用 F-R 共轭梯度法求解无约束问题
+
+\[
+\min x_1^2 + x_2^2 - x_1^2 x_2 .
+\]
+
+初始点为 $\bar{x}_0 = [1, 1]^T$，现已求出 $\bar{x}_1 = [1, 1/2]^T$，再迭代一次，求 $\bar{x}_2$ 并讨论第 2 个迭代点是否为最优解。
+    \end{problem}
+
+    \begin{problem}
+        用乘子法求解约束问题
+
+\[
+\begin{aligned}
+\min \quad & f(x) = x_1^2 + (x_2 - 1)^2; \\
+\text{s.t.} \quad & x_1 \geq 20 \quad \Rightarrow \quad x_1 - 20 \geq 0, \\
+& x_2 \geq 2.
+\end{aligned}
+\]
+
+公式: $F(\bar{x}, \bar{\lambda}, \bar{v}, \mu) = f(\bar{x}) - \sum_{j=1}^{l} \lambda_j h_j(\bar{x}) + \mu \sum_{j=1}^{l} h_j^2(\bar{x}) + \frac{1}{4\mu} \sum_{i=1}^{m} \left\{[\max(0, \bar{v}_i - 2\mu s_i(\bar{x}))]^2 - \bar{v}_i^2\right\}$
+
+\[
+\bar{\lambda}_j^{(k+1)} = \bar{\lambda}_j^{(k)} - 2\mu h_j(\bar{x}_k), \ j=1,2,\dots,l;
+\]
+
+\[
+\bar{v}_i^{(k+1)} = \max(0, \bar{v}_i^{(k)} - 2\mu s_i(\bar{x}_k)), \ i=1,2,\dots,m.
+\]
+    \end{problem}
+
+    \begin{problem}
+        用 DFP 法求解无约束问题
+
+\[
+\min x_1^2 + x_2^2 + \frac{1}{2} x_3^2 + x_1 x_2 - x_3 .
+\]
+
+初始点为 $\bar{x}_0 = [-2,1]^T$，现已求出 $\bar{x}_1 = [-1/2,1]^T$，再迭代一次，求 $\bar{x}_2$，并解答 2 个问题：(1) $\bar{x}_2$ 是最优解吗，为什么？(2) 如果 $\bar{x}_2$ 不是最优解，那么求到最优解还需要多少次迭代？
+
+公式：
+\[
+\bar{H}_{k+1} = \bar{H}_k + \frac{\bar{s}_k \bar{s}_k^T}{\bar{s}_k^T \bar{y}_k} - \frac{\bar{H}_k \bar{y}_k \bar{y}_k^T \bar{H}_k}{\bar{y}_k^T \bar{H}_k \bar{y}_k}, \quad
+\bar{H}_0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} .
+\]
+    \end{problem}
+
+
+    \begin{problem}
+        设函数 $f(\bar{x}) = \frac{1}{2} \bar{x}^T Q \bar{x} + \bar{b}^T \bar{x} + c$，其中 $Q$ 是正定矩阵，$\bar{x}_*$ 为满足 $\nabla f(\bar{x}_*) = \bar{0}$ 的任意一点，从 $\bar{x}_0$ 出发，沿方向 $\bar{p} = -Q^{-1} \nabla f(\bar{x}_0)$ 对 $f(\bar{x})$ 作直线搜索，求最优步长因子 $t_0$（从直线搜索到的极小点 $\bar{z}_1$，试问 $\bar{z}_1$ 与 $f(\bar{x})$ 是什么关系？
+    \end{problem}
+
+    \begin{problem}
+        采用图上作业方式，用步长加速法求解无约束问题 $\min f(\bar{x})$．$f(\bar{x})$ 的等值线图如下图所示，标号 1 处为初始点，设初始步长向量的分量均为 1（图中网格为单位格），迭代到开始缩小步长为止．要求：
+
+(a) 在下方所示直角坐标系上标出探测的先后顺序；
+
+(b) 按下面指定的标识方式，标出作业过程中的全部基点、参考点和探测经历点：
+
+\begin{itemize}[label=]
+\item $\square$ 参考点 \quad $\bullet$ 基点 \quad $\circ$ 探测经历点 \quad $\blacksquare$ 基点与参考点重合的点
+\end{itemize}
+
+(c) 按进行的顺序，仅对焦点标号：1, 2, \dots
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2014-1}
+    \end{figure}
+    \end{problem}
+
+    \begin{problem}
+        用 z-容许方向法求解约束问题
+
+\[
+\begin{aligned}
+\min \quad & x_1^2 - x_1 x_2 + x_2^2 - 2x_1; \\
+\text{s.t.} \quad & -3x_1 - x_2 \geq -3, \\
+& x_1 \geq 0, x_2 \geq 0.
+\end{aligned}
+\]
+
+初始点为 $\bar{x}_0 = [2/3, 0]^T$，迭代一次，求 $\bar{x}_1$.
+    \end{problem}
+
+    \begin{problem}
+        考虑约束问题
+
+\[
+\begin{aligned}
+\min \quad & x_1^2 - x_1 x_2 + x_2^2, \\
+\text{s.t.} \quad & x_1 - 1 \geq 0, \\
+& x_1 + x_2 - 6 = 0.
+\end{aligned}
+\]
+
+利用下述条件求 K-T 点，并判断所求出的 K-T 点是否是全局最优解。
+    \end{problem}
+
+    \begin{problem}
+        考虑线性规划
+
+\[
+\begin{aligned}
+\min \quad & -4x_1 - x_2 + x_3 - x_4; \\
+\text{s.t.} \quad & x_1 - 3x_3 + x_4 = 4, \\
+& 2x_1 + x_2 + x_3 = 10, \\
+& x_i \geq 0, \quad i=1,\dots,4.
+\end{aligned}
+\]
+
+(1) 求该问题的所有极点并验证解；
+
+(2) 已知该问题有最优解，试问：“可否通过 1 的方式求得最优解？为什么？”
+
+(3) 如果能由 1 的方式求出最优解，那么求出最优解．
+    \end{problem}
+\end{examset}

@@ -1,0 +1,146 @@
+\begin{examset}[2013-2014]
+    \begin{problem}
+        用两阶段单纯形法解线性规划
+\begin{align*}
+    \min \quad & 5x_1 + 3x_2 + 2x_3 \\
+    \text{s.t.} \quad & 3x_1 + 2x_2 + x_3 \ge 2 \\
+    \quad & x_1 - x_2 + 2x_3 \ge 3 \\
+    \quad & x_i \ge 0, \quad i=1, 2, 3.
+\end{align*}
+    \end{problem}
+
+    \begin{problem}
+        采集到关于变量 $x, y, z$ 的一组数据：
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    $x$ & 3 & 5 & 6 & 8 & 12 & 14 \\
+    \hline
+    $y$ & 16 & 10 & 7 & 4 & 3 & 2 \\
+    \hline
+    $z$ & 90 & 72 & 54 & 42 & 30 & 12 \\
+    \hline
+\end{tabular}
+\end{center}
+
+试建立 $z$ 关于 $x, y$ 的线性回归最小二乘模型。
+    \end{problem}
+
+    \begin{problem}
+        判断 $\mathbf{p} = [1, 1, -2]^T$ 是线性约束
+\begin{align*}
+    x_1 + x_2 + x_3 &= 4, \\
+    -3x_1 + 10x_2 + 6x_3 &\le 10, \\
+    6x_1 - x_2 + 4x_3 &\ge 15
+\end{align*}
+在点 $\bar{\mathbf{x}}_0 = [2, 1, 1]^T$ 处的容许方向向量吗？
+    \end{problem}
+
+    \begin{problem}
+        (1) 利用最优性条件，求如下无约束问题
+\[
+\min f(x_1, x_2) = x_1^2 + x_2^2 - x_1^2 x_2
+\]
+的严格局部极小点。
+
+    (2)用 F-R 法解无约束极小化问题
+\[
+\min f(x_1, x_2) = x_1^2 + x_2^2 - x_1^2 x_2.
+\]
+设初始点为 $\bar{\mathbf{x}}_0 = [1, 1]^T$，且按 F-R 法已求出 $\bar{\mathbf{x}}_1 = [1, 1/2]^T$。试再迭代一次，求出 $\bar{\mathbf{x}}_2$。（不要把分数与根式化成小数）
+    \end{problem}
+
+    \begin{problem}
+        用 DFP 法解无约束极小化问题
+\[
+\min f(\mathbf{x}) = (x_1 - 2)^2 + 2x_2^2.
+\]
+设初始点为 $\bar{\mathbf{x}}_0 = [0, 1]^T$，且按 DFP 法已得到 $\bar{\mathbf{x}}_1 = [4/3, -4/3]^T$。
+
+\vspace{1em}
+\noindent
+\textbf{(校正公式：} $H_0 = \text{单位矩阵}$，
+\[
+H_{k+1} = H_k + \frac{\mathbf{s}_k \mathbf{s}_k^T}{\mathbf{s}_k^T \mathbf{y}_k} - \frac{H_k \mathbf{y}_k \mathbf{y}_k^T H_k^T}{\mathbf{y}_k^T H_k \mathbf{y}_k}
+\]
+（不要把分数与根式化成小数）
+    \end{problem}
+
+    \begin{problem}
+        采用图上作业方式，用步长加速法解无约束问题 $\min f(\bar{\mathbf{x}})$。$f(\bar{\mathbf{x}})$ 的等值线图如下图所示，标号 $1$ 处为初始点。设步长向量的分量均取 $1$ (图中网格为单位格)，迭代到开始缩小步长为止。
+
+\textbf{注意:} 
+\begin{enumerate}
+    \item[(a)] 在下图左下方所示的直角坐标系上标出探测搜索方向的先后顺序；
+    \item[(b)] 按指定标识方式: 
+        \begin{itemize}
+            \item[$\bullet$] 基点
+            \item[$\square$] 参考点
+            \item[$\blacksquare$] 基点与参考点的重合点
+            \item[$\circ$] 探测经历点
+        \end{itemize}
+        标出作业过程中的全部基点、参考点和探测经历点；
+    \item[(c)] 按进行的顺序，仅对基点标号 $1, 2, \dots$。
+\end{enumerate}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2013-1}
+    \end{figure}
+    \end{problem}
+
+    \begin{problem}
+        (1) 求极小化约束问题
+\[
+\min f(x_1, x_2) = -\ln(1+x_1) - 2\ln(1+x_2)
+\]
+\[
+\text{s.t. } x_1 + x_2 \le 2.
+\]
+的 K-T 点。
+
+\textbf{(2)} 某公司有 3 个建筑工地要开工，每个工地位置用平面坐标 $(a, b)$ 表示，距离单位：公里；及水泥用量 $d$ (单位：吨) 由下表给出：
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{工地} & \textbf{1} & \textbf{2} & \textbf{3} \\
+    \hline
+    $(a, b)$ & $(2, 2)$ & $(8, 1)$ & $(1, 4)$ \\
+    \hline
+    $d$ (吨) & 3 & 5 & 4 \\
+    \hline
+\end{tabular}
+\end{center}
+现拟建造一个料场，但储量备量为 6 吨。假设料场到工地之间均有直线道路相连。问如何选址和调配调用量，能使总的吨公里数最少（仅建数学模型）？
+    \end{problem}
+
+    \begin{problem}
+        求解约束问题
+\begin{align*}
+    \min \quad & f(\bar{\mathbf{x}}) = x_1^2 + x_2^2 - 2x_1 - 4x_2; \\
+    \text{s.t.} \quad & 2x_1 - x_2 \le 1, \\
+    \quad & x_1 + x_2 \le 2, \\
+    \quad & x_1 \ge 0, x_2 \ge 0.
+\end{align*}
+设初始点取为 $\bar{\mathbf{x}}_0 = [1, 1]^T$，试用 Zoutendijk 容许方向法迭代一次，求出下一迭代点 $\bar{\mathbf{x}}_1$。
+    \end{problem}
+
+    \begin{problem}
+        (1) 外部罚函数法的惩罚方式是针对\rule{3cm}{0.4pt} 点惩罚, 而对\rule{3cm}{0.4pt}点不惩罚, 罚因子的特点\rule{10cm}{0.4pt}
+
+(2) 用乘子法解约束问题 问题时有如下:
+
+\[
+\begin{aligned}
+\min & \quad f(x_1, x_2) = \frac{1}{2} x_1^2 + \frac{1}{2} x_2^2 + x_1; \\
+\text{s.t.} & \quad x_1 + x_2 \geq 1, \\
+& \quad x_1 x_2 = 70.
+\end{aligned}
+\]
+
+(公式: $F(\bar{x}, \bar{\lambda}, \bar{v}, \mu) = f(\bar{x}) - \sum_{j=1}^{2} \lambda_j h_j(\bar{x}) + \mu \sum_{j=1}^{2} h_j^2(\bar{x}) + \frac{1}{4\mu} \sum_{i=1}^{m} \left\{[\max(0, v_i^k - 2\mu s_i(\bar{x}_k))]^2 - v_i^{k^2}\right\}$
+
+\[
+\bar{\lambda}_j^{(k+1)} = \bar{\lambda}_j^{(k)} - 2\mu h_j(\bar{x}_k), j=1,2,\dots,l; \quad v_i^{(k+1)} = \max(0, v_i^{(k)} - 2\mu s_i(\bar{x}_k)), i=1,2,\dots,m.
+\]
+    \end{problem}
+\end{examset}

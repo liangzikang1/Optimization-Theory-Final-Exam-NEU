@@ -1,0 +1,103 @@
+\chapter[2008-2009]{2008}
+  \begin{problem}[程序设计]
+一、本题仅为自己编写、运行并交了优化程序同学的必做题。答题情况将作为给程序成绩的依据。未交程序或未答此题的同学，程序成绩为零。
+
+用你在已交优化程序中所用的编程语言，给下面的问题编写一个小程序。
+
+\textbf{问题：} 设函数 $f(x,y)=x^{3}-y^{2}$，向量
+$\mathbf{u}=(u_{1},u_{2},\ldots,u_{n})^{\mathrm T}$，$\mathbf{v}=(v_{1},v_{2},\ldots,v_{n})^{\mathrm T}$。
+对每个分量，计算
+\[
+d_i=f(u_i,v_i)=u_i^{3}-v_i^{2},
+\]
+并将所有 $d_i>0$ 的值求和：
+\[
+S=\sum_{i=1}^{n}\mathbf{1}_{\{d_i>0\}}\,d_i
+=\sum_{i=1}^{n}\mathbf{1}_{\{u_i^{3}-v_i^{2}>0\}}\,(u_i^{3}-v_i^{2}),
+\]
+其中 $\mathbf{1}_{\{\cdot\}}$ 为示性函数（条件成立取 $1$，否则取 $0$）。
+
+\textbf{程序要求：} 必须有输入、输出结果数据语句，用循环语句编写计算语句。
+\end{problem}
+
+
+  \begin{problem}[试用两阶段单纯形法求解如下线性规划]
+\[
+\begin{aligned}
+&\min\ -3x_1-2x_2\\
+\text{s.t.}\quad
+&3x_1+x_2=3,\\
+&6x_1+3x_2\ge 7,\\
+&x_1+2x_2\le 3,\\
+&x_i\ge 0,\ i=1,2.
+\end{aligned}
+\]
+
+  \end{problem}
+
+  \begin{problem}
+ 有 $A,B$ 两种产品都需要经过前、后两道化学反应过程。每一个单位产品 $A$ 需要前道过程 $2$ 小时和后道过程 $3$ 小时；每一个单位产品 $B$ 需要前道过程 $3$ 小时和后道过程 $4$ 小时。可利用的前道过程时间是 $16$ 小时，后道过程时间是 $24$ 小时。每生产一个单位产品 $B$ 的同时，会生产两个单位的副产品 $C$，且不需要任何费用。副产品 $C$ 的一部分可以作为废料处理，其余的可以销售。出售单位产品 $A$ 可以获利 $4$ 元，出售单位产品 $B$ 可以获利 $10$ 元；出售单位副产品 $C$ 可以获利 $3$ 元，销毁单位副产品 $C$ 的费用是 $2$ 元。最多可售出 $5$ 个单位的副产品 $C$。问产品 $A,B$ 的产量、副产品 $C$ 的销售量和副产品 $C$ 的销毁量是多少，使利润达到最大？建立该问题的线性规划模型。
+  \end{problem}
+
+
+  \begin{problem}
+    求函数 $f(x_1, x_2) = (x_1-2)^2 + (x_1-2x_2)^2$ 在点 $(1, 1)^T$ 处的 $\text{Taylor}$ 展开式 (写到三项).
+  \end{problem}
+
+  \begin{problem}
+    对于极小化问题
+$$ \min f(x_1, x_2) = 4x_1^2 + x_2^2 - x_1^2x_2 $$
+判断 $\bar{x}_1 = [0, 0]^T$ 和 $\bar{x}_2 = [2\sqrt{2}, 4]^T$ 是否是该问题的局部极小点.
+  \end{problem}
+
+  \begin{problem}
+对于线性规划问题
+
+\[
+\begin{aligned}
+&\max\ -x_1+x_2\\
+\text{s.t.}\quad
+&2x_1+x_2-x_3=0,\\
+&x_1-x_2+2x_3+2x_4=6,\\
+&4x_2+x_3-x_4=4,\\
+&x_i\ge 0,\ i=1,2,3,4.
+\end{aligned}
+\]
+
+设 $B=(\bar a_1,\bar a_3,\bar a_4)$，$B$ 是否是基？如果 $B$ 是基，那么求出关于 $B$ 的基本解，并判断它是否是基本容许解。
+
+  \end{problem}
+
+  \begin{problem}
+    下面是三个二元正定二次函数的等值线图. 从指定初始点 $\mathbf{x}_0$ 出发, 各图按指定算法, 画出求极小点的迭代路径. 其中最速下降法须迭代三次.
+    \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2008-1.png}
+  \caption{不会p图见谅}
+  \label{fig:example}
+    \end{figure}
+  \end{problem}
+\clearpage
+  \begin{problem}
+    已知无约束优化问题
+$$ \min f(x_1, x_2) = \frac{1}{2}x_1^2 + x_1x_2 + \frac{3}{2}x_2^2 + x_1 - 2x_2 + 1 $$
+取初始点为 $\bar{x}_0 = [-4, 3]^T$, 用 DFP 算法迭代两次, 并判断最后一点是否为最优解.
+
+\bigskip
+
+公式:
+$$ H_{k+1} = H_k + \frac{\bar{s}_k \bar{s}_k^T}{\bar{s}_k^T \bar{y}_k} - \frac{H_k \bar{y}_k \bar{y}_k^T H_k}{\bar{y}_k^T H_k \bar{y}_k}, \quad H_0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$
+  \end{problem}
+
+  \begin{problem}
+    采用图上作业方式, 用步长加速法求无约束问题 $\min f(\bar{x})$. 初始点为图中标号 $1$ 的点. 步长取为图中单位格的长和宽. 极小点在 $x^*$ 处. 迭代到开始缩小步长为止. $f(\bar{x})$ 的等值线图如下所示.
+\bigskip
+
+要求: 1. 按下面的标识方式标出搜索过程中的全部基点、参考点和探测经厉点.
+\begin{itemize}
+    \item 基点 / 临参考点 / 基点与参考点重合点 / 探测经厉点
+\end{itemize}
+2. 按进行的先后顺序对基点、参考点进行序号 $1, 2, \cdots$.
+
+    图片省略（太模糊）
+  \end{problem}

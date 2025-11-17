@@ -1,0 +1,115 @@
+\begin{examset}[2011-2012]
+    \begin{problem}
+        试用两阶段单纯形法解线性规划
+\begin{align*}
+    \min \quad & 2x_1 + 3x_2 + 4x_3 \\
+    \text{s.t.} \quad & x_1 + 2x_2 + x_3 \ge 3 \\
+    \quad & 2x_1 - x_2 + 3x_3 \ge 4 \\
+    \quad & x_i \ge 0, \quad i=1, 2, 3.
+\end{align*}
+    \end{problem}
+
+    \begin{problem}
+        设一个求极小的线性规划的容许集 $D$、目标函数的负梯度向量 $-\bar{c}$ 及初始点 $\bar{x}_0$ 的位置如右图所示。试在图上画出至少 3 条等值线，及从初始点 $\bar{x}_0$ 到最优点的迭代路径（要求标出各迭代点）。
+
+        图省略了（请看原卷）
+    \end{problem}
+
+    \begin{problem}
+        下面是三个二元正定二次函数的等值线图。从指定初始点 $\mathbf{x}_0$ 出发，各图按指定算法画出求极小点的迭代路径。其中最速下降法要求只迭代二次。
+        \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{fig/2011-1}
+    \end{figure}
+
+    \end{problem}
+
+    \begin{problem}
+        用 F-R 共轭梯度法解无约束极小化问题
+\[
+\min f(\bar{\mathbf{x}}) = -\frac{1}{2} x_1^2 + \frac{1}{2} x_2^2 + x_3^2 - x_1 x_2,
+\]
+初始点取为 $\bar{\mathbf{x}}_0 = [1, 1, 1]^T$。按 F-R 共轭梯度法现已迭代出 $\bar{\mathbf{x}}_1 = [\frac{1}{5}, 1, \frac{1}{5}]^T$，要求继续迭代一次，求出 $\bar{\mathbf{x}}_2$，并判断 $\bar{\mathbf{x}}_2$ 是否为局部最优解。
+    \end{problem}
+
+    \begin{problem}
+        用 DFP 法解无约束极小化问题
+\[
+\min f(\bar{\mathbf{x}}) = x_1^2 + 2x_2^2 - x_1^2 x_2
+\]
+初始点取为 $\bar{\mathbf{x}}_0 = [1, 1]^T$。按 DFP 法现已迭代出 $\bar{\mathbf{x}}_1 = [1, 1/4]^T$，要求继续迭代一次，求出 $\bar{\mathbf{x}}_2$，并判断 $\bar{\mathbf{x}}_2$ 是否为局部最优解。
+
+\vspace{1em}
+\noindent
+\textbf{（公式：}
+\begin{align*}
+    H_{k+1} &= H_k + \frac{\mathbf{s}_k \mathbf{s}_k^T}{\mathbf{s}_k^T \mathbf{y}_k} - \frac{H_k \mathbf{y}_k \mathbf{y}_k^T H_k^T}{\mathbf{y}_k^T H_k \mathbf{y}_k}, \\
+    H_0 &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}.
+\end{align*}
+\textbf{注：} $\sqrt{146} \approx 12.08$，$\sqrt{148} \approx 12.17$)
+    \end{problem}
+
+    \begin{problem}
+        用加速法解无约束极小化问题
+\[
+\min f(\bar{\mathbf{x}}) = 4x_1^2 + x_2^2.
+\]
+设初始点 $\bar{\mathbf{x}}_0 = [1, 2.5]^T$，初始步长方向 $\bar{\mathbf{s}}_0 = [1, 1]^T$。要求迭代到模式移动结束为止。
+    \end{problem}
+
+    \begin{problem}
+        试述容许方向法的 3 个主要过程是：
+\begin{enumerate}
+    \item 确定当前迭代点处的\underline{\hspace{3cm}}。
+    \item \underline{\hspace{3cm}}，得到下一个迭代点。
+    \item 判断新\underline{\hspace{3cm}}是否为 K-T 点。
+\end{enumerate}
+
+    求解如下线性约束问题
+\begin{align*}
+    \min \quad & f(x_1, x_2, x_3) = x_1^3 + 2x_2^2 - x_3^2 - 3x_2 x_3 \\
+    \text{s.t.} \quad & x_1 + x_2 + x_3 = 1, \\
+    \quad & 3x_1 + 4x_2 + 2x_3 \le 6, \\
+    \quad & x_i \ge 0, \quad i=1, 2, 3.
+\end{align*}
+
+设初始点取为 $\bar{\mathbf{x}}_0 = [1, 0, 0]^T$。
+
+\begin{enumerate}
+    \item 检验 $\bar{\mathbf{p}}_0 = [-2, 1, 1]^T$ 是否为 $\bar{\mathbf{x}}_0$ 处的下降容许方向。
+    \item 如果 $\bar{\mathbf{p}}_0 = [-2, 1, 1]^T$ 是 $\bar{\mathbf{x}}_0$ 处的下降容许方向，那么沿 $\bar{\mathbf{p}}_0$ 作直线搜索，求出下一迭代点 $\bar{\mathbf{x}}_1$。然后停止计算；否则，直接停止计算。
+\end{enumerate}
+    \end{problem}
+
+    \begin{problem}
+        简述外部罚函数法的“罚”思想。鉴于乘子法是外部罚函数法的改进方法，简述“改进”的本质。
+
+        试用乘子法解如下约束问题
+\begin{align*}
+    \min \quad & f(x_1, x_2) = x_1^2 + x_1 x_2 + x_2^2 \\
+    \text{s.t.} \quad & x_1 + x_2 \ge 1.
+\end{align*}
+
+\vspace{1em}
+\noindent
+\textbf{（公式：}
+\begin{itemize}
+    \item 扩展拉格朗日函数 $F(\bar{\mathbf{x}}, \bar{\boldsymbol{\lambda}}, \bar{\boldsymbol{\nu}}, \mu) = f(\bar{\mathbf{x}}) - \sum_{j=1}^{l} \lambda_j h_j(\bar{\mathbf{x}}) + \mu \sum_{j=1}^{l} h_j^2(\bar{\mathbf{x}}) + \frac{1}{4\mu} \sum_{i=1}^{m} \{[\max(0, \bar{\nu}_i - 2\mu g_i(\bar{\mathbf{x}}))]^2 - \bar{\nu}_i^2\}$.
+    \item 等式乘子更新: $\lambda_j^{(k+1)} = \max(0, \dots - 2\mu h_j(\bar{\mathbf{x}}_k)), \quad j=1, 2, \dots, l.$
+    \item 不等式乘子更新: $\nu_i^{(k+1)} = \max(0, \nu_i^{(k)} - 2\mu g_i(\bar{\mathbf{x}}_k)), \quad i=1, 2, \dots, m.$
+\end{itemize}
+    \end{problem}
+
+    \begin{problem}
+        试利用 K-T 条件解如下约束极小化问题
+\begin{align*}
+    \min \quad & f(x_1, x_2, x_3) = x_1 + x_2 - x_3 \\
+    \text{s.t.} \quad & x_1 - x_2 = 0, \\
+    \quad & 1 - x_1^2 - x_2^2 - x_3^2 \ge 0.
+\end{align*}
+    \end{problem}
+
+    \begin{problem}
+        某工厂向用户提供发动机，合同规定交货量和交货日期分别是：第一季度末交 40 台，第二季度末交 60 台，第三季度末交 80 台。工厂每季的最大生产能力为 100 台。每季的生产费用函数为 $f(x) = 50x + 0.2x^2$ (元)， $x$ 为生产台数。如果某季生产过剩，则多余的发动机可用于下季交货，但工厂需要支付存储费用：每台每季 4 元。试建立工厂能够完成合同而费用最少的数学模型（假定第一季度开始时发动机无存货）。
+    \end{problem}
+\end{examset}
